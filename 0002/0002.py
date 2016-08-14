@@ -6,11 +6,7 @@ from random import Random
 __author__ = 'patrick_psq'
 
 def generate_random(length):
-    st = ''
-    chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789'
-    len_chars = len(chars)
-    for i in xrange(length):
-        st += chars[Random().randint(0, len_chars - 1)]
+    st = ''.join([chars[Random().randint(0, len(chars) - 1)] for i in xrange(length)])
     return st
 
 if __name__ == '__main__':
