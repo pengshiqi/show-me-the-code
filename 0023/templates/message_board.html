@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <title>My Message Board</title>
+</head>
+<body>
+  <h1>
+    留言板
+  </h1>
+  <form method="get">
+    <p>姓名 <input type="text" name="name"/></p>
+    <p>内容 <input type="text" name="content"/></p>
+    <input type="submit" value="提交"/>
+  </form>
+  {% for post in posts %}
+    <div>
+      <p>
+        {{post.author}}
+      </p>
+      <p>
+        {{post.content}}
+      </p>
+    </div>
+  {% endfor %}
+</body>
+</html>
