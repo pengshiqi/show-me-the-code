@@ -2,20 +2,27 @@
 <html>
 <head>
   <title>My Message Board</title>
+  <style>
+    h1 {background-color: rgb(255,100,150);}
+    form {border-style: solid; background-color: rgb(100, 100,200)}
+  </style>
 </head>
 <body>
   <h1>
     留言板
   </h1>
-  <form method="get">
+  <form method="post">
     <p>姓名 <input type="text" name="name"/></p>
     <p>内容 <input type="text" name="content"/></p>
     <input type="submit" value="提交"/>
   </form>
+  <h2>
+    留言历史信息
+  </h2>
   {% for post in posts %}
     <div>
       <p>
-        {{post.author}}
+        {{post.name}} 留言于 {{post.time}}
       </p>
       <p>
         {{post.content}}
